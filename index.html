@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon Cheems -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
+    <!-- Style -->
+    <link rel="stylesheet" href="./Style/index.css">
+    <title>Meme editor</title>
+</head>
+<body>
+    <!-- HEADER MENU -->
+    <header class="display-flex-center">
+        <section>
+            <h1 class="title-page">Meme Generator</h1>
+        </section>
+        <div class="menu-buttons">
+            <button id="btn-img-menu"><i class="fa-regular fa-file-image"></i>Image</button>
+            <button id="btn-text-menu"><i class="fa-solid fa-font"></i>Text</button>
+            <button class="btn-light-mode"><i class="fa-regular fa-lightbulb"></i>Light mode</button>
+            <button class="btn-dark-mode hidden"><i class="fa-solid fa-lightbulb"></i>Dark mode</button>
+        </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="display-flex-center">
+        <div class="meme-container display-flex-center">
+            <p class="meme-top-text text-meme">Top Text</p>
+            <div class="img-meme"></div>
+            <p class="meme-bottom-text text-meme">Bottom Text</p>
+        </div>
+        <button class="btn-download-meme"><i class="fa-solid fa-download"></i>Download meme</button>
+    </main>
+    <!-- ASIDE MENU -->
+    <aside class="menu-container hidden" id="menu-container">
+        <button id="btn-close-menu" class="btn-close-menu"><i class="fa-solid fa-xmark"></i></button>
+        <!-- IMG EDITOR -->
+        <article id="menu-img-editor" class="menu-img-editor hidden">
+            <h2>Image</h2>
+            <!-- URL IMAGE -->
+            <section class="menu-editor">
+                <h3>Url</h3>
+                <input type="text" id="input-url-img" class="input-url-img" aria-label="Url image">
+            </section>
+            <!-- BACKGROUND BLEND EFFECT -->
+            <section class="menu-editor">
+                <h3>Background</h3>
+                <div class="menu-bc-container">
+                    <div class="menu-bc menu-bc--colour">
+                        <input type="color" aria-label="Background colour Image" id="input-bc-colour" value="#FFFFFF">
+                        <p id="text-bc-colour">#FFFFFF</p>
+                    </div>
+                    <div class="menu-bc menu-bc--options">
+                        <select name="colour-blend" id="select-colour-blend">
+                            <option value="">None</option>
+                            <option value="clarify">Clarify</option>
+                            <option value="darken">Darken</option>
+                            <option value="difference">Difference</option>
+                            <option value="brightness">Brightness</option>
+                            <option value="multiply">Multiply</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <!-- FILTERS -->
+            <section class="menu-editor">
+                <h3>Filtros</h3>
+                <div class="menu-filter">
+                    <div class="menu-control-range">
+                        <label for="brightness-line">Brightness</label>
+                        <input type="range" id="brightness-line" min="0" max="1" value="1" step="0.1">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="opacity-line">Opacity</label>
+                        <input type="range" id="opacity-line" min="0" max="1" value="1" step="0.1">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="contrast-line">Contrast</label>
+                        <input type="range" id="contrast-line" min="100" max="1000" value="100" step="1">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="blur-line">Blur</label>
+                        <input type="range" id="blur-line" min="0" max="10" value="0" step="0.1">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="grayscale-line">Grayscale</label>
+                        <input type="range" id="grayscale-line" min="0" max="100" value="0" step="1">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="sepia-line">Sepia</label>
+                        <input type="range" id="sepia-line" min="0" max="100" value="0" step="1">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="hue-line">Hue</label>
+                        <input type="range" id="hue-line" min="0deg" max="359" value="1" step="0">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="saturation-line">Saturation</label>
+                        <input type="range" id="saturation-line" min="100" max="1000" value="100" step="10">
+                    </div>
+                    <div class="menu-control-range">
+                        <label for="negative-line">Negative</label>
+                        <input type="range" id="negative-line" min="0" max="1" value="0" step="0.1">
+                    </div>
+                </div>
+            </section>
+            <button id="btn-reset-filters" class="btn-reset-filters">Reset filters</button>
+        </article>
+        <!-- TEXT EDITOR -->
+        <article id="menu-text-editor" class="menu-text-editor hidden">
+            <h2>Text</h2>
+            <!-- TOP TEXT -->
+            <section class="menu-editor">
+                <h3>Top</h3>
+                <input type="text" id="input-top-text" class="input-top-text" placeholder="TOP TEXT"></input>
+                <div class="checkbox">
+                    <input type="checkbox" id="without-top-text">
+                    <label for="without-top-text">Without top text</label>
+                </div>
+            </section>
+            <!-- BOTTOM TEXT -->
+            <section class="menu-editor">
+                <h3>Bottom</h3>
+                <input type="text" id="input-bottom-text" class="input-bottom-text" placeholder="BOTTOM TEXT"></textarea>
+                <div class="checkbox">
+                    <input type="checkbox" id="without-bottom-text">
+                    <label for="without-bottom-text">Without bottom text</label>
+                </div>
+            </section>
+            <!-- FONT EDITOR -->
+            <section class="menu-editor">
+                <h3>Font</h3>
+                <!-- FONT FAMILY OPTIONS -->
+                <select name="Font Family" id="font-family-select" class="font-family-select">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact" selected>Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+                <!-- FONT SIZE OPTIONS -->
+                <div class="menu-font-size">
+                    <input type="number" id="input-font-size" class="input-font-size" name="Font size" aria-label="Font size" min="12" value="50">
+                    <div class="menu-text-align">
+                        <button id="btn-text-left"><i class="fa-solid fa-align-left"></i></button>
+                        <button id="btn-text-center"><i class="fa-solid fa-align-center"></i></button>
+                        <button id="btn-text-rigth"><i class="fa-solid fa-align-right"></i></button>
+                    </div>
+                </div>
+            </section>
+            <!-- FONT COLOR -->
+            <section class="menu-editor">
+                <article class="menu-colour-container">
+                    <div class="menu-colour">
+                        <h3>Colour</h3>
+                        <div class="menu-input-colour display-flex-center">
+                            <input type="color" name="Text colour" value="#000000" id="input-text-colour" class="input-text-colour">
+                            <p id="text-colour">#000000</p>
+                        </div>
+                    </div>
+                    <div class="menu-colour">
+                        <h3>Background</h3>
+                        <div class="menu-input-colour display-flex-center">
+                            <input type="color" name="Background colour text" value="#FFFFFF" id="input-bc-colour-text" class="input-bc-colour-text">
+                            <p id="bc-colour-text">#FFFFFF</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="checkbox">
+                    <input type="checkbox" id="transparent-background">
+                    <label for="transparent-background">Transparent background</label>
+                </article>
+            </section>
+            <!-- FONT OUTLINE -->
+            <section class="menu-editor">
+                <h3>Outline</h3>
+                <div class="menu-outline">
+                    <button id="outline outline--none">None</button>
+                    <button id="outline outline--white">Light</button>
+                    <button id="outline outline--dark">Dark</button>
+                </div>
+            </section>
+            <!-- FONT PADDING -->
+            <section class="menu-editor">
+                <h3>Spacing</h3>
+                <input type="number" class="padding-text" id="padding-text" aria-label="Padding text" min="10" max="50" value="7">
+            </section>
+            <!-- FONT LINE SPACE -->
+            <section class="menu-editor">
+                <h3>Line space</h3>
+                <select id="menu-input-line-height" class="menu-input-line-height" aria-label="Line height">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </section>
+        </article>
+    </aside>
+    <!-- FOOTER -->
+    <footer>
+        <ul>
+            <li><a href="https://github.com/Rocio-Ch" aria-label="Ir a Github.com"><i class="fa-brands fa-github-alt"></i></a></li>
+            <li><a href="mailto:rociomagali77@email.com" aria-label="Enviar un mail"><i class="fa-solid fa-envelope"></i></a></li>
+            <li><a href="https://twitter.com/devroken" aria-label="It a Twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+        <p class="copyright">Rocío Magalí Chaparro © 2022</p>
+    </footer>
+    <script src="./Js/index.js"></script>
+</body>
+</html>
