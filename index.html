@@ -52,7 +52,7 @@
                 <div class="menu-bc-container">
                     <div class="menu-bc menu-bc--colour">
                         <input type="color" aria-label="Background colour Image" id="input-bc-colour" value="#FFFFFF">
-                        <p id="text-bc-colour">#FFFFFF</p>
+                        <p id="text-bc-colour" class="text-bc-colour">#ffffff</p>
                     </div>
                     <div class="menu-bc menu-bc--options">
                         <select name="colour-blend" id="select-colour-blend">
@@ -100,11 +100,11 @@
                     </div>
                     <div class="menu-control-range">
                         <label for="saturation-line">Saturation</label>
-                        <input type="range" id="saturation-line" min="100" max="1000" value="100" step="10">
+                        <input type="range" id="saturation-line" min="100" max="1000" value="100" step="10" class="default">
                     </div>
                     <div class="menu-control-range">
                         <label for="negative-line">Negative</label>
-                        <input type="range" id="negative-line" min="0" max="1" value="0" step="0.1">
+                        <input type="range" id="negative-line" min="0" max="1" value="0" step="0.1" class="default">
                     </div>
                 </div>
             </section>
@@ -163,14 +163,14 @@
                         <h3>Colour</h3>
                         <div class="menu-input-colour display-flex-center">
                             <input type="color" name="Text colour" value="#000000" id="input-text-colour" class="input-text-colour">
-                            <p id="text-colour">#000000</p>
+                            <p id="text-colour" class="text-colour">#000000</p>
                         </div>
                     </div>
                     <div class="menu-colour">
                         <h3>Background</h3>
                         <div class="menu-input-colour display-flex-center">
                             <input type="color" name="Background colour text" value="#FFFFFF" id="input-bc-colour-text" class="input-bc-colour-text">
-                            <p id="bc-colour-text">#FFFFFF</p>
+                            <p id="bc-colour-text" class="bc-colour-text">#FFFFFF</p>
                         </div>
                     </div>
                 </article>
@@ -183,19 +183,19 @@
             <section class="menu-editor">
                 <h3>Outline</h3>
                 <div class="menu-outline">
-                    <button id="outline outline--none">None</button>
-                    <button id="outline outline--white">Light</button>
-                    <button id="outline outline--dark">Dark</button>
+                    <button  id="outline--none">None</button>
+                    <button  id="outline--white">Light</button>
+                    <button  id="outline--dark">Dark</button>
                 </div>
             </section>
             <!-- FONT PADDING -->
             <section class="menu-editor">
                 <h3>Spacing</h3>
-                <input type="number" class="padding-text" id="padding-text" aria-label="Padding text" min="10" max="50" value="7">
+                <input type="number" class="padding-text" id="padding-text" aria-label="Padding text" min="10" max="50" value="25">
             </section>
             <!-- FONT LINE SPACE -->
             <section class="menu-editor">
-                <h3>Line space</h3>
+                <h3>Line height</h3>
                 <select id="menu-input-line-height" class="menu-input-line-height" aria-label="Line height">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
@@ -210,9 +210,9 @@
     <!-- FOOTER -->
     <footer>
         <ul>
-            <li><a href="https://github.com/Rocio-Ch" aria-label="Ir a Github.com"><i class="fa-brands fa-github-alt"></i></a></li>
+            <li><a href="https://github.com/Rocio-Ch" aria-label="Ir a Github.com" target="_blank"><i class="fa-brands fa-github-alt"></i></a></li>
             <li><a href="mailto:rociomagali77@email.com" aria-label="Enviar un mail"><i class="fa-solid fa-envelope"></i></a></li>
-            <li><a href="https://twitter.com/devroken" aria-label="It a Twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/devroken" aria-label="It a Twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
         </ul>
         <p class="copyright">Rocío Magalí Chaparro © 2022</p>
     </footer>

@@ -1,14 +1,10 @@
 const $ = (selector) => document.querySelector(selector)
 
-//funcion para ocultar cualquier elemento
-//const hideElement = (element) => element.style.display = "none"
+                                    /* ####  HEADER BUTTONS AND EDIT MENU  #### */
 
-/* ####  HEADER BUTTONS AND EDIT MENU  #### */
 
 /*   <!-- REMOVE HIDDEN ASIDE --> */
-const unhiddenAside = () => {
-    $("#menu-container").classList.remove("hidden")
-}
+const unhiddenAside = () => $("#menu-container").classList.remove("hidden")
 
 /*   <!-- ADDING PADDING RIGHT FROM 701PX --> */
 const paddingRight = () => {
@@ -68,7 +64,7 @@ $("#btn-close-menu").addEventListener("click", () => {
 
 
 
-/*   ####  DARK & LIGHT MODE SWITCH  ####    */
+                                    /*   ####  DARK & LIGHT MODE SWITCH  ####    */
 
 const switchMode = () => {
     $("body").classList.toggle("light-mode")
@@ -76,34 +72,58 @@ const switchMode = () => {
     $(".btn-dark-mode").classList.remove("hidden")
 }
 
-$(".btn-light-mode").addEventListener("click", () => {
-    switchMode()
-})
+$(".btn-light-mode").addEventListener("click", () => switchMode())
 
-$(".btn-dark-mode").addEventListener("click", () => {
-    switchMode()
-})
-
-
-/*   ####  URL INPUT IMAGE ####   */
-
-$("#input-url-img").addEventListener("input", () => {
-    $(".img-meme").style.backgroundImage = `url(${$("#input-url-img").value})`                                   
-})
-
-
-/*   ####  INPUT BACKGROUND COLOR ####   */
-
-$("#input-bc-colour").addEventListener("input", () => $(".img-meme").style.backgroundColor = $("#input-bc-colour").value)
+$(".btn-dark-mode").addEventListener("click", () => switchMode())
 
 
 
-/*   ####  BACKGROUND BLEND EFFECT ####   */
 
-$("#select-colour-blend").addEventListener("click", () => {
-    $(".img-meme").style.backgroundBlendMode = $("#select-colour-blend").value
+                                    /*   ####  IMAGE MENU EDITOR ####   */
+
+
+/*   <!-- URL INPUT IMAGE -->  */
+$("#input-url-img").addEventListener("input", () => $(".img-meme").style.backgroundImage = `url(${$("#input-url-img").value})`)
+
+
+/*   <!--  INPUT BACKGROUND COLOR -->   */
+$("#input-bc-colour").addEventListener("input", () => {
+    $(".img-meme").style.backgroundColor = $("#input-bc-colour").value
+    $("#text-bc-colour").innerText = `${$("#input-bc-colour").value}`
 })
 
 
+/*  <!-- BACKGROUND BLEND EFFECT -->   */
+$("#select-colour-blend").addEventListener("click", () => $(".img-meme").style.backgroundBlendMode = $("#select-colour-blend").value)
+
+
+
+                                     /*  ####   MENU FILTERS  ####   */
+
+
+$("#brightness-line").addEventListener("click", () => $(".img-meme").style.filter = `brightness(${$("#brightness-line").value})`)
+
+$("#opacity-line").addEventListener("click", () => $(".img-meme").style.filter = `opacity(${$("#opacity-line").value})`)
+
+$("#contrast-line").addEventListener("click", () => $(".img-meme").style.filter = `contrast(${$("#contrast-line").value}%)`)
+
+$("#blur-line").addEventListener("click", () => $(".img-meme").style.filter = `blur(${$("#blur-line").value}px)`)
+
+$("#grayscale-line").addEventListener("click", () => $(".img-meme").style.filter = `grayscale(${$("#grayscale-line").value}%)`)
+
+$("#sepia-line").addEventListener("click", () => $(".img-meme").style.filter = `sepia(${$("#sepia-line").value}%)`)
+
+$("#hue-line").addEventListener("click", () => $(".img-meme").style.filter = `hue-rotate(${$("#hue-line").value}deg)`)
+
+$("#saturation-line").addEventListener("click", () => $(".img-meme").style.filter = `saturate(${$("#saturation-line").value}%)`)
+
+$("#negative-line").addEventListener("click", () => $(".img-meme").style.filter = `invert(${$("#negative-line").value})`)
+
+
+/*   <!--  RESET FILTERS -->   */
+
+$("#btn-reset-filters").addEventListener("click", () => {
+    //no tengo idea D: googlear luego
+})
 
 

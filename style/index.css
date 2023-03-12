@@ -161,15 +161,13 @@ main .meme-container {
 
 .text-meme {
     width: 100%;
-    height: 20%;
     align-items: center;
     display: flex;
     justify-content: center;
     font-size: var(--font-size18px);
     font-weight: 800;
-    text-align: center;
     text-transform: uppercase;
-    padding: 8px 50px;
+    padding: 25px 50px;
     background: #fff;
     color: #000;
 }
@@ -207,6 +205,7 @@ main .meme-container {
 
 .menu-container {
     width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     right: 0;
@@ -216,14 +215,6 @@ main .meme-container {
     padding: 30px 15px;
     background-color: var(--color-menu-container);
     box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
-    
-    height: 100%;
-    padding: 30px 15px;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-/*     z-index: 10; */
 }
 
 
@@ -253,6 +244,10 @@ main .meme-container {
     align-items: center;
     height: 36px;
     padding: 5px 8px;
+}
+
+.text-bc-colour, .text-colour, .bc-colour-text {
+    text-transform: uppercase;
 }
 
 #input-bc-colour, #input-text-colour, #input-bc-colour-text {
@@ -387,7 +382,7 @@ main .meme-container {
 
 .menu-outline button {
     padding: 10px 15px;
-    background-color: var(-color-boton-default);
+    background-color: var(--color-boton-default);
     border-radius: var(--border-radius);
     margin-right: 6px;
 }
@@ -444,6 +439,14 @@ input:hover,
 .menu-input-colour:hover,
 .menu-input-colour:focus {
     background-color: var(--background-color-hover);
+}
+
+.outline-light {
+    text-shadow: #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px;
+}
+
+.outline-dark {
+    text-shadow: #000 2px 2px, #000 -2px 2px, #000 2px -2px, #000 -2px -2px;
 }
 
 .hidden {
