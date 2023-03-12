@@ -176,6 +176,7 @@ main .meme-container {
 
 .img-meme {
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     flex-grow: 1;
 }

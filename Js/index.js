@@ -1,5 +1,8 @@
 const $ = (selector) => document.querySelector(selector)
 
+//funcion para ocultar cualquier elemento
+//const hideElement = (element) => element.style.display = "none"
+
 /* ####  HEADER BUTTONS AND EDIT MENU  #### */
 
 /*   <!-- REMOVE HIDDEN ASIDE --> */
@@ -80,3 +83,27 @@ $(".btn-light-mode").addEventListener("click", () => {
 $(".btn-dark-mode").addEventListener("click", () => {
     switchMode()
 })
+
+
+/*   ####  URL INPUT IMAGE ####   */
+
+$("#input-url-img").addEventListener("input", () => {
+    $(".img-meme").style.backgroundImage = `url(${$("#input-url-img").value})`                                   
+})
+
+
+/*   ####  INPUT BACKGROUND COLOR ####   */
+
+$("#input-bc-colour").addEventListener("input", () => $(".img-meme").style.backgroundColor = $("#input-bc-colour").value)
+
+
+
+/*   ####  BACKGROUND BLEND EFFECT ####   */
+
+$("#select-colour-blend").addEventListener("click", () => {
+    $(".img-meme").style.backgroundBlendMode = $("#select-colour-blend").value
+})
+
+
+
+
