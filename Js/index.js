@@ -127,3 +127,39 @@ $("#btn-reset-filters").addEventListener("click", () => {
 })
 
 
+                                   /*   ####  TEXT EDITOR MENU ####   */
+
+
+/*   <!--  INPUT TOP TEXT -->   */
+$("#input-top-text").addEventListener("input", () => $(".meme-top-text").innerText = `${$("#input-top-text").value}`)
+
+
+
+/*   <!--  INPUT BOTTOM TEXT -->   */
+$("#input-bottom-text").addEventListener("input", () => $(".meme-bottom-text").innerText = `${$("#input-bottom-text").value}`)
+
+
+
+/*   <!--  CHECKBOX TOP TEXT & BOTTOM TEXT  -->   */
+
+$("#without-top-text").addEventListener("input", () => {
+    if ($("#without-top-text").checked) {
+        $(".meme-top-text").classList.add("hidden")
+        $(".img-meme").style.backgroundPosition = "center"
+    } else {
+        $(".meme-top-text").classList.remove("hidden")
+    }
+})
+
+
+$("#without-bottom-text").addEventListener("input", () => {
+    if ($("#without-bottom-text").checked) {
+        $(".meme-bottom-text").classList.add("hidden")
+        $(".img-meme").style.backgroundPosition = "center"
+    } else {
+        $(".meme-bottom-text").classList.remove("hidden")
+    }
+})
+
+
+
