@@ -449,13 +449,15 @@ input:hover,
     display: none;
 }
 
+.widthTablet {
+    padding-right: 280px;
+}
+
 /*    ### MEDIA QUERYS ###   */
 
-@media (min-width: 701px) and (max-width: 1300px) {
-    header, main, footer {
-        width: calc(100% - 260px);
-    }
+/* TABLET */
 
+@media (min-width: 701px) and (max-width: 1300px) {
     h1 {
         font-size: 2.25rem;
     }
@@ -467,27 +469,21 @@ input:hover,
     }
 
     .menu-container {
-        width: 260px;
-    }
-
-    .menu-container .btn-close-menu {
-        display: none;
-    }
-
-    .menu-container, .menu-img-editor {
-        display: block;
+        width: 280px;
     }
 }
 
 
+
+/* DESKTOP */
 @media (min-width: 1301px) {
+    header, main, footer {
+        padding-right: 280px
+    }
+
     header {
         height: 160px;
         justify-content: center;
-    }
-
-    header, main, footer {
-        width: calc(100% - 300px);
     }
 
     .menu-buttons button {
@@ -524,7 +520,7 @@ input:hover,
     }
 
     .menu-container {
-        width: 300px;
+        width: 280px;
     }
 
     h2 {

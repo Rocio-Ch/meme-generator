@@ -2,34 +2,70 @@ const $ = (selector) => document.querySelector(selector)
 
 /* ####  HEADER BUTTONS AND EDIT MENU  #### */
 
-/* const hiddenMenuContainer = () => {
+/*   <!-- REMOVE HIDDEN ASIDE --> */
+const unhiddenAside = () => {
     $("#menu-container").classList.remove("hidden")
-} 
- */
+}
+
+/*   <!-- ADDING PADDING RIGHT FROM 701PX --> */
+const paddingRight = () => {
+    $("header").classList.add("widthTablet")
+    $("main").classList.add("widthTablet")
+    $("footer").classList.add("widthTablet")
+}
+
+/*   <!-- REMOVING PADDING RIGHT --> */
+const paddingRightRemove = () => {
+    $("header").classList.remove("widthTablet")
+    $("main").classList.remove("widthTablet")
+    $("footer").classList.remove("widthTablet")
+}
+
+/*   <!-- SWITCHING MENUS IN DESKTOP VERSION --> */
+const menuImgDisplayDesktop = () => {
+    if ($("#menu-img-editor").style.display = "none") {
+        $("#menu-img-editor").style.display = "block"
+    }
+}
+
+const menuTextDisplayDesktop = () => {
+    if ($("#menu-img-editor").style.display = "block") {
+        $("#menu-img-editor").style.display = "none"
+    }
+}
+
 /* <!-- BTN IMG EDITOR --> */
-/* $("#btn-img-menu").addEventListener("click", () => {
-    hiddenMenuContainer()
-    $("#menu-img-editor").classList.remove("hidden")
+$("#btn-img-menu").addEventListener("click", () => {
+    removeHiddenAside()
     $("#menu-text-editor").classList.add("hidden")
-}) */
+    $("#menu-img-editor").classList.remove("hidden")
+    paddingRight()
+    menuImgDisplayDesktop()
+})
+
+
 
 /* <!-- BTN TEXT EDITOR --> */
-/* $("#btn-text-menu").addEventListener("click", () => {
-    hiddenMenuContainer()
-    $("#menu-text-editor").classList.remove("hidden")
+$("#btn-text-menu").addEventListener("click", () => {
+    removeHiddenAside()
     $("#menu-img-editor").classList.add("hidden")
-}) */
+    $("#menu-text-editor").classList.remove("hidden")
+    paddingRight()
+    menuTextDisplayDesktop()
+})
+
 
 /* <!-- BTN CLOSE MENU EDITOR --> */
-/* $("#btn-close-menu").addEventListener("click", () => {
+$("#btn-close-menu").addEventListener("click", () => {
     if (!($("#menu-img-editor").classList.contains(".hidden")) || ($("#menu-text-editor").classList.contains(".hidden"))) {
             $("#menu-container").classList.add("hidden")
+            paddingRightRemove()
     }
 })
- */
 
 
-/*    #### DARK & LIGHT MODE SWITCH ####    */
+
+/*   ####  DARK & LIGHT MODE SWITCH  ####    */
 
 const switchMode = () => {
     $("body").classList.toggle("light-mode")
@@ -44,47 +80,3 @@ $(".btn-light-mode").addEventListener("click", () => {
 $(".btn-dark-mode").addEventListener("click", () => {
     switchMode()
 })
-
-
-/* BUTTONS MENU */
-
-/* if ($("#menu-container").classList.contains("hidden")) {
-    ("#menu-container").classList.remove("hidden")
-} else {
-    $("#btn-close-menu").classList.add("hidden")
-}
- */
-
-/* $("#btn-img-menu").addEventListener("click", () => {
-    if ($("#menu-container").classList.contains("hidden")) {
-        $("#menu-container").classList.remove("hidden")
-        $("#menu-img-editor").classList.remove("hidden")
-    }
-}) */
-
-
-//CHEKEAR ESTA KK
-$("#btn-img-menu").addEventListener("click", () => {
-    if (!$("#menu-img-editor").classList.contains("hidden")) {
-        $("#menu-img-editor").classList.add("hidden")
-    }
-})
-
-
-
-$("#btn-text-menu").addEventListener("click", () => {
-    if ($("#menu-container").classList.contains("hidden")) {
-        $("#menu-container").classList.remove("hidden")
-        $("#menu-img-editor").classList.remove("hidden")
-
-    }
-})
-
-
-$("#btn-close-menu").addEventListener("click", () => {
-    if (!($("#menu-img-editor").classList.contains(".hidden")) || ($("#menu-text-editor").classList.contains(".hidden"))) {
-            $("#menu-container").classList.add("hidden")
-    }
-})
-
-

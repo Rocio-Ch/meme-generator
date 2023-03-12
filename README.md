@@ -31,10 +31,12 @@ Este proyecto es una herramienta con la cual vamos a poder seleccionar a traves 
 ### Ver el proyecto
 Para poder visualizar el proyecto simplemente colocá el siguiente enlace en tu navegador preferido:
 
-
+https://rocio-ch.github.io/meme-generator/
 
 Preview del proyecto:
 ![Preview del portfolio](/images/mg-darkMode-preview.jpg)
+![Preview del portfolio](/images/mg-lightMode-preview.jpg)
+![Preview del portfolio](/images/mg-mobile-preview.jpg)
 
 ### Desarrolladores
 Este proyecto es el trabajo final con nota individual del primer módulo de JavaScript en el curso de ADA ITW, por lo tanto su única desarrolladora es:
