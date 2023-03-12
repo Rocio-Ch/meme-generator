@@ -36,7 +36,7 @@ const menuTextDisplayDesktop = () => {
 
 /* <!-- BTN IMG EDITOR --> */
 $("#btn-img-menu").addEventListener("click", () => {
-    removeHiddenAside()
+    unhiddenAside()
     $("#menu-text-editor").classList.add("hidden")
     $("#menu-img-editor").classList.remove("hidden")
     paddingRight()
@@ -47,7 +47,7 @@ $("#btn-img-menu").addEventListener("click", () => {
 
 /* <!-- BTN TEXT EDITOR --> */
 $("#btn-text-menu").addEventListener("click", () => {
-    removeHiddenAside()
+    unhiddenAside()
     $("#menu-img-editor").classList.add("hidden")
     $("#menu-text-editor").classList.remove("hidden")
     paddingRight()
