@@ -35,7 +35,9 @@ https://rocio-ch.github.io/meme-generator/
 
 Preview del proyecto:
 ![Preview del portfolio](/images/mg-darkMode-preview.jpg)
+
 ![Preview del portfolio](/images/mg-lightMode-preview.jpg)
+
 ![Preview del portfolio](/images/mg-mobile-preview.jpg)
 
 ### Desarrolladores
