@@ -276,3 +276,35 @@ $("#outline--none").addEventListener("click", () => {
     removingOutlineLight()
 })
 
+
+                                    /*   ####  PADDING TEXT  ####   */
+
+
+$("#padding-text").addEventListener("click", () => {
+    $(".meme-top-text").style.paddingTop = `${$("#padding-text").value}px`
+    $(".meme-top-text").style.paddingBottom = `${$("#padding-text").value}px`
+    $(".meme-bottom-text").style.paddingTop = `${$("#padding-text").value}px`
+    $(".meme-bottom-text").style.paddingBottom = `${$("#padding-text").value}px`
+})
+
+
+                                    /*   ####  LINE HEIGHT  ####   */
+
+$("#menu-input-line-height").addEventListener("click", () => {
+    $(".meme-top-text").style.lineHeight= $("#menu-input-line-height").value
+    $(".meme-bottom-text").style.lineHeight= $("#menu-input-line-height").value
+})
+
+
+                                    /*   ####  DOWNLOAD MEME BUTTON  ####   */
+
+const downloadMeme = () => {
+    domtoimage.toBlob($(".meme-container")).then((blob) => {
+        saveAs(blob, "my-meme.png")
+    })
+}
+
+
+$("#btn-download-meme").addEventListener("click", downloadMeme)
+                                
+
