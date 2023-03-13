@@ -127,6 +127,8 @@ $("#btn-reset-filters").addEventListener("click", () => {
 })
 
 
+
+
                                    /*   ####  TEXT EDITOR MENU ####   */
 
 
@@ -162,7 +164,9 @@ $("#without-bottom-text").addEventListener("input", () => {
 })
 
 
-                                    /*   ####  FONT FAMILY  ####   */
+
+                                   /*   ####  FONT FAMILY  ####   */
+
 
 $("#font-family-select").addEventListener("click", () => {
     $(".meme-top-text").style.fontFamily = $("#font-family-select").value
@@ -170,7 +174,9 @@ $("#font-family-select").addEventListener("click", () => {
 })
 
 
-                                    /*   ####  FONT SIZE  ####   */
+
+                                   /*   ####  FONT SIZE  ####   */
+
 
 $("#input-font-size").addEventListener("click", () => {
     $(".meme-top-text").style.fontSize = `${$("#input-font-size").value}px`
@@ -178,7 +184,7 @@ $("#input-font-size").addEventListener("click", () => {
 })
 
 
-                                    /*   ####  TEXT ALIGN  ####   */
+                                   /*   ####  TEXT ALIGN  ####   */
 
 /*   <!--  TEXT ALIN LEFT   -->   */
 $("#btn-text-left").addEventListener("click", () => {
@@ -276,10 +282,8 @@ $("#outline--none").addEventListener("click", () => {
     removingOutlineLight()
 })
 
-
-                                    /*   ####  PADDING TEXT  ####   */
-
-
+                                   /*   ####  PADDING TEXT  ####   */
+                                   
 $("#padding-text").addEventListener("click", () => {
     $(".meme-top-text").style.paddingTop = `${$("#padding-text").value}px`
     $(".meme-top-text").style.paddingBottom = `${$("#padding-text").value}px`
@@ -288,7 +292,7 @@ $("#padding-text").addEventListener("click", () => {
 })
 
 
-                                    /*   ####  LINE HEIGHT  ####   */
+                                   /*   ####  LINE HEIGHT  ####   */
 
 $("#menu-input-line-height").addEventListener("click", () => {
     $(".meme-top-text").style.lineHeight= $("#menu-input-line-height").value
@@ -296,7 +300,7 @@ $("#menu-input-line-height").addEventListener("click", () => {
 })
 
 
-                                    /*   ####  DOWNLOAD MEME BUTTON  ####   */
+                                   /*   ####  DOWNLOAD MEME BUTTON  ####   */
 
 const downloadMeme = () => {
     domtoimage.toBlob($(".meme-container")).then((blob) => {
@@ -306,5 +310,3 @@ const downloadMeme = () => {
 
 
 $("#btn-download-meme").addEventListener("click", downloadMeme)
-                                
-
