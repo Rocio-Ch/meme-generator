@@ -162,4 +162,117 @@ $("#without-bottom-text").addEventListener("input", () => {
 })
 
 
+                                    /*   ####  FONT FAMILY  ####   */
+
+$("#font-family-select").addEventListener("click", () => {
+    $(".meme-top-text").style.fontFamily = $("#font-family-select").value
+    $(".meme-bottom-text").style.fontFamily = $("#font-family-select").value
+})
+
+
+                                    /*   ####  FONT SIZE  ####   */
+
+$("#input-font-size").addEventListener("click", () => {
+    $(".meme-top-text").style.fontSize = `${$("#input-font-size").value}px`
+    $(".meme-bottom-text").style.fontSize = `${$("#input-font-size").value}px`
+})
+
+
+                                    /*   ####  TEXT ALIGN  ####   */
+
+/*   <!--  TEXT ALIN LEFT   -->   */
+$("#btn-text-left").addEventListener("click", () => {
+    $(".meme-top-text").style.justifyContent = "left"
+    $(".meme-bottom-text").style.justifyContent = "left"
+})
+
+
+/*   <!--  TEXT ALIN CENTER   -->   */
+$("#btn-text-center").addEventListener("click", () => {
+    $(".meme-top-text").style.justifyContent = "center"
+    $(".meme-bottom-text").style.justifyContent = "center"
+})
+
+
+/*   <!--  TEXT ALIN RIGHT   -->   */
+$("#btn-text-rigth").addEventListener("click", () => {
+    $(".meme-top-text").style.justifyContent = "right" 
+    $(".meme-bottom-text").style.justifyContent = "right"
+})
+
+
+                                   /*   ####  COLOR TEXT & BACKGROUND COLOR  ####   */
+
+/*   <!--  INPUT COLOR TEXT   -->   */
+$("#input-text-colour").addEventListener("input", () => {
+    $(".meme-top-text").style.color = `${$("#input-text-colour").value}`
+    $(".meme-bottom-text").style.color = `${$("#input-text-colour").value}`
+    $("#text-colour").innerText = `${$("#input-text-colour").value}`
+})
+
+/*   <!--  BACKGROUND COLOR TEXT   -->   */
+$("#input-bc-colour-text").addEventListener("input", () => {
+    $(".meme-top-text").style.backgroundColor = `${$("#input-bc-colour-text").value}`
+    $(".meme-bottom-text").style.backgroundColor = `${$("#input-bc-colour-text").value}`
+    $(".bc-colour-text").innerText = `${$("#input-bc-colour-text").value}`
+})
+
+
+
+                                   /*   ####  BACKGROUND TEXT TRANSPARENT CHECKED  ####   */
+
+
+$("#transparent-background").addEventListener("input", () => {
+    if ($("#transparent-background").checked) {
+        $(".meme-top-text").style.backgroundColor = "transparent"
+        $(".meme-bottom-text").style.backgroundColor = "transparent"
+    } else {
+        $(".meme-top-text").style.backgroundColor = "#FFFFFF"
+        $(".meme-bottom-text").style.backgroundColor = "#FFFFFF"
+    }
+})
+
+
+                                   /*   ####  OUTLINE TEXT  ####   */
+
+const addingOutlineLight = () => {
+    $(".meme-top-text").classList.add("outline-light")
+    $(".meme-bottom-text").classList.add("outline-light")
+}
+
+const addingOutlineDark = () => {
+    $(".meme-top-text").classList.add("outline-dark")
+    $(".meme-bottom-text").classList.add("outline-dark")
+}
+
+const removingOutlineLight = () => {
+    $(".meme-top-text").classList.remove("outline-light")
+    $(".meme-bottom-text").classList.remove("outline-light")
+}
+
+const removingOutlineDark = () => {
+    $(".meme-top-text").classList.remove("outline-dark")
+    $(".meme-bottom-text").classList.remove("outline-dark")
+}
+
+
+
+/*   <!--  OUTLINE TEXT LIGHT   -->   */
+$("#outline--white").addEventListener("click", () => {
+    addingOutlineLight()
+    removingOutlineDark()
+})
+
+/*   <!--  OUTLINE TEXT DARK   -->   */
+$("#outline--dark").addEventListener("click", () => {
+    addingOutlineDark()
+    removingOutlineLight()
+})
+
+
+/*   <!--  OUTLINE TEXT NONE   -->   */
+$("#outline--none").addEventListener("click", () => {
+    removingOutlineDark()
+    removingOutlineLight()
+})
 
