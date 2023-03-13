@@ -123,9 +123,33 @@ $("#negative-line").addEventListener("click", () => $(".img-meme").style.filter 
 /*   <!--  RESET FILTERS -->   */
 
 $("#btn-reset-filters").addEventListener("click", () => {
-    //no tengo idea D: googlear luego
-})
+    $("#brightness-line").value = "1"
+    $(".img-meme").style.filter = `brightness(${$("#brightness-line").value})`
 
+    $("#opacity-line").value = "1"
+    $(".img-meme").style.filter = `opacity(${$("#opacity-line").value})`
+
+    $("#contrast-line").value = "100"
+    $(".img-meme").style.filter = `contrast(${$("#contrast-line").value})`
+
+    $("#blur-line").value = "0"
+    $(".img-meme").style.filter = `blur(${$("#blur-line").value})`
+
+    $("#grayscale-line").value = "0"
+    $(".img-meme").style.filter = `grayscale(${$("#grayscale-line").value})`
+
+    $("#sepia-line").value = "0"
+    $(".img-meme").style.filter = `sepia(${$("#sepia-line").value})`
+
+    $("#hue-line").value = "1"
+    $(".img-meme").style.filter = `hue-rotate(${$("#hue-line").value})`
+
+    $("#saturation-line").value = "100"
+    $(".img-meme").style.filter = `saturate(${$("#saturation-line").value})`
+
+    $("#negative-line").value = "0"
+    $(".img-meme").style.filter = `invert(${$("#negative-line").value})`
+})
 
 
 
