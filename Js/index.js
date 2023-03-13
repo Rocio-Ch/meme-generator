@@ -305,8 +305,7 @@ $("#menu-input-line-height").addEventListener("click", () => {
 const downloadMeme = () => {
     domtoimage.toBlob($(".meme-container")).then((blob) => {
         saveAs(blob, "my-meme.png")
-    })
+      })
 }
 
-
-$("#btn-download-meme").addEventListener("click", downloadMeme)
+$("#btn-download-meme").addEventListener('click', downloadMeme)
