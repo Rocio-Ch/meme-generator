@@ -157,6 +157,9 @@ main .meme-container {
     height: 70%;
     margin: 20px 0;
     background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .text-meme {

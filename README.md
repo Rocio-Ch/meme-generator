@@ -15,7 +15,7 @@ Mi nombre es Rocío Magalí Chaparro, estoy estudiando para convertirme en desar
 
 ### Descripción del proyecto
 
-Este proyecto es una herramienta con la cual vamos a poder seleccionar a traves de la url cualquier imagen de internet y a ella aplicarle todos los estilos, filtros y tipografias disponibles para tansformarlo en el meme que queramos. Una vez obtenido el resultado deseado podremos descargar a nuestro dispositivo la imagen finalizada. Cuenta con modo oscuro/claro y es totalmente adaptativo ya que contiene media queries.
+Este proyecto es una herramienta con la cual vamos a poder seleccionar a traves de la url cualquier imagen de internet y a ella aplicarle todos los estilos, filtros y tipografias disponibles para tansformarlo en el meme que queramos. Una vez obtenido el resultado deseado podremos descargar a nuestro dispositivo la imagen finalizada. Cuenta con modo oscuro/claro y es totalmente adaptativo ya que contiene media query.
 
 ***
 

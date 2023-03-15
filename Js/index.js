@@ -68,8 +68,8 @@ $("#btn-close-menu").addEventListener("click", () => {
 
 const switchMode = () => {
     $("body").classList.toggle("light-mode")
-    $(".btn-light-mode").classList.add("hidden")
-    $(".btn-dark-mode").classList.remove("hidden")
+    $(".btn-light-mode").classList.toggle("hidden")
+    $(".btn-dark-mode").classList.toggle("hidden")
 }
 
 $(".btn-light-mode").addEventListener("click", () => switchMode())
@@ -101,56 +101,35 @@ $("#select-colour-blend").addEventListener("click", () => $(".img-meme").style.b
                                      /*  ####   MENU FILTERS  ####   */
 
 
-$("#brightness-line").addEventListener("click", () => $(".img-meme").style.filter = `brightness(${$("#brightness-line").value})`)
+const newValueFilters = () => {
+    $(".img-meme").style.filter = `brightness(${$("#brightness-line").value}) opacity(${$("#opacity-line").value}) contrast(${$("#contrast-line").value}%) blur(${$("#blur-line").value}px) grayscale(${$("#grayscale-line").value}%) sepia(${$("#sepia-line").value}%) hue-rotate(${$("#hue-line").value}deg) saturate(${$("#saturation-line").value}%) invert(${$("#negative-line").value})`
+}
 
-$("#opacity-line").addEventListener("click", () => $(".img-meme").style.filter = `opacity(${$("#opacity-line").value})`)
-
-$("#contrast-line").addEventListener("click", () => $(".img-meme").style.filter = `contrast(${$("#contrast-line").value}%)`)
-
-$("#blur-line").addEventListener("click", () => $(".img-meme").style.filter = `blur(${$("#blur-line").value}px)`)
-
-$("#grayscale-line").addEventListener("click", () => $(".img-meme").style.filter = `grayscale(${$("#grayscale-line").value}%)`)
-
-$("#sepia-line").addEventListener("click", () => $(".img-meme").style.filter = `sepia(${$("#sepia-line").value}%)`)
-
-$("#hue-line").addEventListener("click", () => $(".img-meme").style.filter = `hue-rotate(${$("#hue-line").value}deg)`)
-
-$("#saturation-line").addEventListener("click", () => $(".img-meme").style.filter = `saturate(${$("#saturation-line").value}%)`)
-
-$("#negative-line").addEventListener("click", () => $(".img-meme").style.filter = `invert(${$("#negative-line").value})`)
+$("#brightness-line").addEventListener("input", newValueFilters)
+$("#opacity-line").addEventListener("input", newValueFilters)
+$("#contrast-line").addEventListener("input", newValueFilters)
+$("#blur-line").addEventListener("input", newValueFilters)
+$("#grayscale-line").addEventListener("input", newValueFilters)
+$("#sepia-line").addEventListener("input", newValueFilters)
+$("#hue-line").addEventListener("input", newValueFilters)
+$("#saturation-line").addEventListener("input", newValueFilters)
+$("#negative-line").addEventListener("input", newValueFilters)
 
 
 /*   <!--  RESET FILTERS -->   */
 
 $("#btn-reset-filters").addEventListener("click", () => {
-    $("#brightness-line").value = "1"
-    $(".img-meme").style.filter = `brightness(${$("#brightness-line").value})`
-
-    $("#opacity-line").value = "1"
-    $(".img-meme").style.filter = `opacity(${$("#opacity-line").value})`
-
-    $("#contrast-line").value = "100"
-    $(".img-meme").style.filter = `contrast(${$("#contrast-line").value})`
-
-    $("#blur-line").value = "0"
-    $(".img-meme").style.filter = `blur(${$("#blur-line").value})`
-
-    $("#grayscale-line").value = "0"
-    $(".img-meme").style.filter = `grayscale(${$("#grayscale-line").value})`
-
-    $("#sepia-line").value = "0"
-    $(".img-meme").style.filter = `sepia(${$("#sepia-line").value})`
-
-    $("#hue-line").value = "1"
-    $(".img-meme").style.filter = `hue-rotate(${$("#hue-line").value})`
-
-    $("#saturation-line").value = "100"
-    $(".img-meme").style.filter = `saturate(${$("#saturation-line").value})`
-
-    $("#negative-line").value = "0"
-    $(".img-meme").style.filter = `invert(${$("#negative-line").value})`
+    $("#brightness-line").value = 1
+    $("#opacity-line").value = 1
+    $("#contrast-line").value = 100
+    $("#blur-line").value = 0
+    $("#grayscale-line").value = 0
+    $("#sepia-line").value = 0
+    $("#hue-line").value = 1
+    $("#saturation-line").value = 100
+    $("#negative-line").value = 0
+    $(".img-meme").style.filter = "none"
 })
-
 
 
                                    /*   ####  TEXT EDITOR MENU ####   */
@@ -251,12 +230,22 @@ $("#input-bc-colour-text").addEventListener("input", () => {
 
                                    /*   ####  BACKGROUND TEXT TRANSPARENT CHECKED  ####   */
 
-
 $("#transparent-background").addEventListener("input", () => {
     if ($("#transparent-background").checked) {
+        $(".meme-container").style.backgroundImage = `url(${$("#input-url-img").value})`
+        $(".img-meme").style.backgroundImage = "none"
+        $("#input-bc-colour").setAttribute("disabled", true)
+        $("#select-colour-blend").setAttribute("disabled", true)
+        $(".img-meme").style.backgroundColor = "transparent"
         $(".meme-top-text").style.backgroundColor = "transparent"
         $(".meme-bottom-text").style.backgroundColor = "transparent"
+
     } else {
+        $(".meme-container").style.backgroundImage = "none"
+        $(".img-meme").style.backgroundImage = `url(${$("#input-url-img").value})`
+        $("#input-bc-colour").removeAttribute("disabled")
+        $("#select-colour-blend").removeAttribute("disabled")
+        $(".img-meme").style.backgroundColor = $("#input-bc-colour").value
         $(".meme-top-text").style.backgroundColor = "#FFFFFF"
         $(".meme-bottom-text").style.backgroundColor = "#FFFFFF"
     }
