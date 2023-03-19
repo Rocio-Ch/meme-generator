@@ -22,7 +22,7 @@ Este proyecto es una herramienta con la cual vamos a poder seleccionar a traves 
 ### Herramientas utilizadas
 - HTML5
 - CSS3
-- JS
+- JS - DOM
 - Git
 - Github
 
