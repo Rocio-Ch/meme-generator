@@ -171,7 +171,7 @@ main .meme-container {
     font-size: var(--font-size18px);
     font-weight: 800;
     text-transform: uppercase;
-    padding: 25px 50px;
+    padding: 15px 0px;
     background: #fff;
     color: #000;
 }
@@ -217,9 +217,16 @@ main .meme-container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 30px 15px;
+    padding: 30px 0;
     background-color: var(--color-menu-container);
     box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+}
+
+.menu-img-editor, .menu-text-editor {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 0 15px 0 15px;
 }
 
 
@@ -503,6 +510,7 @@ input:hover,
     .text-meme {
         font-size: 2.188rem;
     }
+
 }
 
 
@@ -543,6 +551,13 @@ input:hover,
     }
 
     /* ASIDE */
+
+    .menu-img-editor, .menu-text-editor {
+        overflow-x: hidden;
+        overflow-y:unset;
+        height: 100%;
+    }
+
     .menu-container, .menu-img-editor {
         display: block;
     }

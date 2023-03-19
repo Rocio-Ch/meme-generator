@@ -280,7 +280,7 @@ const removingOutlineDark = () => {
 
 
 /*   <!--  OUTLINE TEXT LIGHT   -->   */
-$("#outline--white").addEventListener("click", () => {
+$("#outline--light").addEventListener("click", () => {
     addingOutlineLight()
     removingOutlineDark()
 })
