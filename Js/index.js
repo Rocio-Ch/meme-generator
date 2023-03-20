@@ -242,6 +242,7 @@ $("#transparent-background").addEventListener("input", () => {
         changeColor($(".meme-top-text"), "transparent")
         changeColor($(".meme-bottom-text"), "transparent")
         $(".meme-top-text").style.top = "0"
+        $(".meme-top-text").style.zIndex = "1"
         $(".meme-bottom-text").style.bottom = "0"
         $("#input-bc-colour-text").setAttribute("disabled", true)
     } else {
