@@ -1,63 +1,36 @@
+
+/* <!-- SELECT WITH QUERY SELECTOR --> */
 const $ = (selector) => document.querySelector(selector)
+
+/*   <!-- ADD & REMOVE CLASS --> */
+const addClass = (element, clas) => element.classList.add(clas)
+const removeClass = (element, clas) => element.classList.remove(clas)
+
 
                                     /* ####  HEADER BUTTONS AND EDIT MENU  #### */
 
-
-/*   <!-- REMOVE HIDDEN ASIDE --> */
-const unhiddenAside = () => $("#menu-container").classList.remove("hidden")
-
-/*   <!-- ADDING PADDING RIGHT FROM 701PX --> */
-const paddingRight = () => {
-    $("header").classList.add("widthTablet")
-    $("main").classList.add("widthTablet")
-    $("footer").classList.add("widthTablet")
-}
-
-/*   <!-- REMOVING PADDING RIGHT --> */
-const paddingRightRemove = () => {
-    $("header").classList.remove("widthTablet")
-    $("main").classList.remove("widthTablet")
-    $("footer").classList.remove("widthTablet")
-}
-
-/*   <!-- SWITCHING MENUS IN DESKTOP VERSION --> */
-const menuImgDisplayDesktop = () => {
-    if ($("#menu-img-editor").style.display = "none") {
-        $("#menu-img-editor").style.display = "block"
-    }
-}
-
-const menuTextDisplayDesktop = () => {
-    if ($("#menu-img-editor").style.display = "block") {
-        $("#menu-img-editor").style.display = "none"
-    }
-}
-
 /* <!-- BTN IMG EDITOR --> */
 $("#btn-img-menu").addEventListener("click", () => {
-    unhiddenAside()
-    $("#menu-text-editor").classList.add("hidden")
-    $("#menu-img-editor").classList.remove("hidden")
-    paddingRight()
-    menuImgDisplayDesktop()
+    removeClass($("#menu-container"), "d-none")
+    addClass($("#menu-text-editor"), "d-none")
+    removeClass($("#menu-img-editor"), "d-none")
+    paddingRightAdd()
 })
-
 
 
 /* <!-- BTN TEXT EDITOR --> */
 $("#btn-text-menu").addEventListener("click", () => {
-    unhiddenAside()
-    $("#menu-img-editor").classList.add("hidden")
-    $("#menu-text-editor").classList.remove("hidden")
-    paddingRight()
-    menuTextDisplayDesktop()
+    removeClass($("#menu-container"), "d-none")
+    addClass($("#menu-img-editor"), "d-none")
+    removeClass($("#menu-text-editor"), "d-none")
+    paddingRightAdd()
 })
 
 
 /* <!-- BTN CLOSE MENU EDITOR --> */
 $("#btn-close-menu").addEventListener("click", () => {
-    if (!($("#menu-img-editor").classList.contains(".hidden")) || ($("#menu-text-editor").classList.contains(".hidden"))) {
-            $("#menu-container").classList.add("hidden")
+    if (!($("#menu-img-editor").classList.contains(".d-none")) || ($("#menu-text-editor").classList.contains(".d-none"))) {
+            addClass($("#menu-container"), "d-none")
             paddingRightRemove()
     }
 })
@@ -68,13 +41,12 @@ $("#btn-close-menu").addEventListener("click", () => {
 
 const switchMode = () => {
     $("body").classList.toggle("light-mode")
-    $(".btn-light-mode").classList.toggle("hidden")
-    $(".btn-dark-mode").classList.toggle("hidden")
+    $(".btn-light-mode").classList.toggle("d-none")
+    $(".btn-dark-mode").classList.toggle("d-none")
 }
 
-$(".btn-light-mode").addEventListener("click", () => switchMode())
-
-$(".btn-dark-mode").addEventListener("click", () => switchMode())
+$(".btn-light-mode").addEventListener("click", switchMode)
+$(".btn-dark-mode").addEventListener("click", switchMode)
 
 
 
@@ -149,20 +121,20 @@ $("#input-bottom-text").addEventListener("input", () => $(".meme-bottom-text").i
 
 $("#without-top-text").addEventListener("input", () => {
     if ($("#without-top-text").checked) {
-        $(".meme-top-text").classList.add("hidden")
+        addClass($(".meme-top-text"), "d-none")
         $(".img-meme").style.backgroundPosition = "center"
     } else {
-        $(".meme-top-text").classList.remove("hidden")
+        removeClass($(".meme-top-text"), "d-none")
     }
 })
 
 
 $("#without-bottom-text").addEventListener("input", () => {
     if ($("#without-bottom-text").checked) {
-        $(".meme-bottom-text").classList.add("hidden")
+        addClass($(".meme-bottom-text"), "d-none")
         $(".img-meme").style.backgroundPosition = "center"
     } else {
-        $(".meme-bottom-text").classList.remove("hidden")
+        removeClass($(".meme-bottom-text"), "d-none")
     }
 })
 
@@ -189,24 +161,27 @@ $("#input-font-size").addEventListener("click", () => {
 
                                    /*   ####  TEXT ALIGN  ####   */
 
+
+const justifyContent = (element, align) => element.style.justifyContent = align
+
 /*   <!--  TEXT ALIN LEFT   -->   */
 $("#btn-text-left").addEventListener("click", () => {
-    $(".meme-top-text").style.justifyContent = "left"
-    $(".meme-bottom-text").style.justifyContent = "left"
+    justifyContent($(".meme-top-text"), "left")
+    justifyContent($(".meme-bottom-text"), "left")
 })
 
 
 /*   <!--  TEXT ALIN CENTER   -->   */
 $("#btn-text-center").addEventListener("click", () => {
-    $(".meme-top-text").style.justifyContent = "center"
-    $(".meme-bottom-text").style.justifyContent = "center"
+    justifyContent($(".meme-top-text"), "center")
+    justifyContent($(".meme-bottom-text"), "center")
 })
 
 
 /*   <!--  TEXT ALIN RIGHT   -->   */
 $("#btn-text-rigth").addEventListener("click", () => {
-    $(".meme-top-text").style.justifyContent = "right" 
-    $(".meme-bottom-text").style.justifyContent = "right"
+    justifyContent($(".meme-top-text"), "right")
+    justifyContent($(".meme-bottom-text"), "right")
 })
 
 
@@ -259,23 +234,23 @@ $("#transparent-background").addEventListener("input", () => {
                                    /*   ####  OUTLINE TEXT  ####   */
 
 const addingOutlineLight = () => {
-    $(".meme-top-text").classList.add("outline-light")
-    $(".meme-bottom-text").classList.add("outline-light")
+    addClass($(".meme-top-text"), "outline-light")
+    addClass($(".meme-bottom-text"), "outline-light")
 }
 
 const addingOutlineDark = () => {
-    $(".meme-top-text").classList.add("outline-dark")
-    $(".meme-bottom-text").classList.add("outline-dark")
+    addClass($(".meme-top-text"), "outline-dark")
+    addClass($(".meme-bottom-text"), "outline-dark")
 }
 
 const removingOutlineLight = () => {
-    $(".meme-top-text").classList.remove("outline-light")
-    $(".meme-bottom-text").classList.remove("outline-light")
+    removeClass($(".meme-top-text"), "outline-light")
+    removeClass($(".meme-bottom-text"), "outline-light")
 }
 
 const removingOutlineDark = () => {
-    $(".meme-top-text").classList.remove("outline-dark")
-    $(".meme-bottom-text").classList.remove("outline-dark")
+    removeClass($(".meme-top-text"), "outline-dark")
+    removeClass($(".meme-bottom-text"), "outline-dark")
 }
 
 
@@ -328,19 +303,59 @@ const downloadMeme = () => {
 $("#btn-download-meme").addEventListener('click', downloadMeme)
 
 
+/*   <!-- ADDING PADDING RIGHT FROM 701PX --> */
+const paddingRightAdd = () => {
+    addClass($("header"), "widthTablet")
+    addClass($("main"), "widthTablet")
+    addClass($("footer"), "widthTablet")
+}
 
-/* MODIFY VALUE INPUT NUMBER FOR TEXT MEME FONT SIZE */
+/*   <!-- REMOVING PADDING RIGHT --> */
+const paddingRightRemove = () => {
+    removeClass($("header"), "widthTablet")
+    removeClass($("main"), "widthTablet")
+    removeClass($("footer"), "widthTablet")
+}
+
+/* MODIFY VALUE INPUT NUMBER FOR TEXT MEME FONT SIZE & SWITCHING MENUS IN DESKTOP VERSION*/
+
+const displaySmallSize = () => {
+    $("#input-font-size").value = "18"
+    $(".meme-top-text").style.fontSize = $("#input-font-size")
+    $(".meme-bottom-text").style.fontSize = $("#input-font-size")
+}
+
+const displayMediumSize = () => {
+    $("#input-font-size").value = "35"
+    if (!$("#menu-container").classList.contains("d-none")) {
+        paddingRightAdd()
+    }
+    $(".meme-top-text").style.fontSize = $("#input-font-size")
+    $(".meme-bottom-text").style.fontSize = $("#input-font-size")
+}
+
+const displayFullSize = () => {
+    $("#input-font-size").value = "40"
+    $(".meme-top-text").style.fontSize = $("#input-font-size")
+    $(".meme-bottom-text").style.fontSize = $("#input-font-size")
+    removeClass($("#menu-container"), "d-none")
+}
 
 const resize = () => {
     if (window.innerWidth >= 320 && window.innerWidth <= 700) {
-        $("#input-font-size").value = "18"
+        displaySmallSize()
     } else if (window.innerWidth >= 701 && window.innerWidth <= 1300) {
-        $("#input-font-size").value = "35"
+        displayMediumSize()
     } else if (window.innerWidth >= 1301) {
-        $("#input-font-size").value = "40"
+        displayFullSize()
     }
 }
 
+
 window.addEventListener("resize", (resize))
 
-
+/*  LOAD EVENT IS FIRED WHEN THE WHOLE PAGE HAS LOADED */
+window.addEventListener("load", () => {
+    resize()
+    removeClass($("#menu-img-editor"), "d-none")
+})

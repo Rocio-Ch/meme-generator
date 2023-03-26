@@ -224,7 +224,7 @@ main .meme-container {
 
 .menu-img-editor, .menu-text-editor {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
     padding: 0 15px 0 15px;
 }
@@ -461,7 +461,7 @@ input:hover,
     text-shadow: #000 2px 2px, #000 -2px 2px, #000 2px -2px, #000 -2px -2px;
 }
 
-.hidden {
+.d-none {
     display: none;
 }
 
@@ -492,7 +492,7 @@ input:hover,
 
 /* TABLET */
 
-@media (min-width: 701px) and (max-width: 1300px) {
+@media (min-width: 701px) {
     .title-page {
         font-size: 2.25rem;
     }
@@ -556,10 +556,6 @@ input:hover,
         overflow-x: hidden;
         overflow-y:unset;
         height: 100%;
-    }
-
-    .menu-container, .menu-img-editor {
-        display: block;
     }
     
     .menu-container .btn-close-menu {

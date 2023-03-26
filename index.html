@@ -26,7 +26,7 @@
             <button id="btn-img-menu"><i class="fa-regular fa-file-image"></i>Image</button>
             <button id="btn-text-menu"><i class="fa-solid fa-font"></i>Text</button>
             <button class="btn-light-mode"><i class="fa-regular fa-lightbulb"></i>Light mode</button>
-            <button class="btn-dark-mode hidden"><i class="fa-solid fa-lightbulb"></i>Dark mode</button>
+            <button class="btn-dark-mode d-none"><i class="fa-solid fa-lightbulb"></i>Dark mode</button>
         </div>
     </header>
     <!-- MAIN CONTENT -->
@@ -39,10 +39,10 @@
         <button class="btn-download-meme" id="btn-download-meme"><i class="fa-solid fa-download"></i>Download meme</button>
     </main>
     <!-- ASIDE MENU -->
-    <aside class="menu-container hidden" id="menu-container">
+    <aside class="menu-container d-none" id="menu-container">
         <button id="btn-close-menu" class="btn-close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
         <!-- IMG EDITOR -->
-        <article id="menu-img-editor" class="menu-img-editor hidden">
+        <article id="menu-img-editor" class="menu-img-editor d-none">
             <h2>Image</h2>
             <!-- URL IMAGE -->
             <section class="menu-editor">
@@ -114,7 +114,7 @@
             <button id="btn-reset-filters" class="btn-reset-filters" aria-label="Reset filters">Reset filters</button>
         </article>
         <!-- TEXT EDITOR -->
-        <article id="menu-text-editor" class="menu-text-editor hidden">
+        <article id="menu-text-editor" class="menu-text-editor d-none">
             <h2>Text</h2>
             <!-- TOP TEXT -->
             <section class="menu-editor">
